@@ -1,21 +1,56 @@
 import axios from "axios";
 
+
+// ==========================
+// BASE API
+// ==========================
 const API = axios.create({
-    baseURL: "https://breathe-esg-qykx.onrender.com/api/emissions/"
+
+    baseURL:
+        "http://127.0.0.1:8000/api/emissions/"
+
 });
 
-// GET ALL
-export const getEmissions = () => API.get("");
 
-// SUSPICIOUS
-export const getSuspicious = () => API.get("suspicious/");
+// ==========================
+// GET EMISSIONS
+// USER-WISE FILTER
+// ==========================
+export const getEmissions = (email) =>
 
-// APPROVE
+    API.get(`?email=${email}`);
+
+
+// ==========================
+// APPROVED RECORDS
+// ==========================
+export const getApprovedRecords = (email) =>
+
+    API.get(`approved/?email=${email}`);
+
+
+// ==========================
+// SUSPICIOUS RECORDS
+// ==========================
+export const getSuspicious = (email) =>
+
+    API.get(`suspicious/?email=${email}`);
+
+
+// ==========================
+// APPROVE RECORD
+// ==========================
 export const approveRecord = (id) =>
+
     API.post(`approve/${id}/`);
 
+
+// ==========================
 // DASHBOARD STATS
-export const getDashboardStats = () =>
-    API.get("dashboard/");
+// ==========================
+export const getDashboardStats = (email) =>
+
+    API.get(`dashboard/?email=${email}`);
+
 
 export default API;
