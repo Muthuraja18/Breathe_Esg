@@ -10,7 +10,11 @@ SECRET_KEY = 'secret-key'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'breathe-esg1-59hl.onrender.com',
+    '127.0.0.1',
+    'localhost',
+]
 
 
 # =====================================
@@ -35,7 +39,6 @@ INSTALLED_APPS = [
     'ingestion',
     'emissions',
     'reviews',
-
 ]
 
 
