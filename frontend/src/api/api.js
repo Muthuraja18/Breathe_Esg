@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-    baseURL: "https://breathe-esg1-59hl.onrender.com/api/emissions/",
+    baseURL: "https://muthuraja18-breathe.hf.space/api/emissions/",
     headers: {
         "Content-Type": "application/json",
     },
